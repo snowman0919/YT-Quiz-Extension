@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>확장 프로그램 팝업</title>
+    <style>
+        body {
+            width: 200px;
+            padding: 10px;
+            text-align: center;
+        }
+        button {
+            width: 100%;
+            padding: 5px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h3>학습 모드</h3>
+    <button id="toggleFeature">요약+퀴즈 열기</button>
+    <div style="margin-top:10px; font-size:12px;">
+      옵션에서 Gemini API 키를 설정하세요.
+    </div>
+    <div style="margin-top:10px;">
+      <button id="openRecords">학습 기록 보기</button>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

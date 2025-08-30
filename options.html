@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YT Quiz 옵션</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; }
+    h2 { margin: 0 0 14px; }
+    label { display: block; margin: 12px 0 6px; font-weight: 600; }
+    .row { margin-bottom: 14px; }
+    .input-wrap { display: flex; gap: 8px; align-items: center; }
+    input[type="password"], input[type="text"] { flex: 1; min-width: 260px; max-width: 520px; padding: 8px; }
+    button { padding: 8px 12px; border-radius: 8px; border: 1px solid #ccc; cursor: pointer; }
+    #status { margin-left: 10px; color: #2a6df4; font-weight: 600; }
+    .help { margin-top: 12px; color: #666; font-size: 13px; }
+  </style>
+</head>
+  <body>
+    <h2>YT 학습 퀴즈 설정</h2>
+    <div class="row">
+      <label for="api">Gemini API Key</label>
+      <div class="input-wrap">
+        <input id="api" type="password" placeholder="API key Input" />
+        <button id="toggle">표시</button>
+      </div>
+    </div>
+    <div class="row">
+      <label for="difficulty">문제 난이도 (1=매우 쉬움 ~ 5=매우 어려움)</label>
+      <select id="difficulty">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" selected>3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div class="row">
+      <label for="qcount">문항 수</label>
+      <input id="qcount" type="number" min="1" max="10" step="1" value="5" />
+    </div>
+    <div class="row">
+      <button id="save">저장</button>
+      <span id="status" aria-live="polite"></span>
+    </div>
+    <p class="help">키와 설정은 브라우저 동기화 저장소에 저장됩니다.</p>
+
+    <script src="options.js"></script>
+  </body>
+</html>
+
+

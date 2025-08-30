@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube 학습 퀴즈",
+  "version": "3.0",
+  "description": "영상 요약 및 퀴즈를 통해 학습을 강화하고, 퀴즈를 풀기 전에는 다른 영상으로 이동을 제한합니다.",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "storage",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://www.youtubei.googleapis.com/*",
+    "https://www.youtube.com/api/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html"
+}
